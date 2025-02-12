@@ -7,6 +7,7 @@ import Profile from '../views/Profile.vue';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
 import ForgotPassword from '../views/ForgotPassword.vue';
+import Tasks from '../views/Tasks.vue';
 
 const routes = [
   { path: '/', redirect: '/app' },
@@ -19,7 +20,8 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       { path: '', component: HomeContent },
-      { path: 'profile', component: Profile }
+      { path: 'profile', component: Profile },
+      { path: 'tasks', component: Tasks }
     ]
   }
 ];

@@ -17,6 +17,10 @@
             <ion-icon :icon="personOutline" slot="start" />
             <ion-label>Perfil</ion-label>
           </ion-item>
+          <ion-item @click="navigateTo('/app/tasks')">
+            <ion-icon :icon="listOutline" slot="start" />
+            <ion-label>Tareas</ion-label>
+          </ion-item>
           <ion-item button @click="logout">
             <ion-icon :icon="logOutOutline" slot="start" />
             <ion-label>Cerrar Sesión</ion-label>
@@ -45,7 +49,8 @@
 
 <script>
 import { IonPage, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonIcon, menuController, IonMenuButton, IonButtons } from '@ionic/vue';
-import { logOutOutline, homeOutline, personOutline } from 'ionicons/icons';
+import { logOutOutline, homeOutline, personOutline ,listOutline} from 'ionicons/icons';
+
 import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'vue-router';
@@ -66,7 +71,7 @@ export default {
       router.push('/login');
     };
 
-    return { logout, navigateTo, logOutOutline, homeOutline, personOutline };
+    return { logout, navigateTo, logOutOutline, homeOutline, personOutline,listOutline };
   }
 };
 </script>
